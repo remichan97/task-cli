@@ -30,8 +30,9 @@ task delete "task_number"
 ```
 
 # To-do list
+- [ ] On adding, marking task, display the task with updated change
 - [ ] Have the task list persistent on each command launch
-- [ ] On adding, marking task, display the task list with updated change
+- [ ] Clear the terminal each time `list` is called
 - [ ] Export the task list into a file
 - [ ] Have a friendlier Usage/Error Message (currently using the default .NET Core Usage/Exception message on some area).
 - [ ] Make a release package without having to go through the hassle of preparing development environment
