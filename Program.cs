@@ -25,6 +25,9 @@ app.Configure(it =>
 	it.AddCommand<ListTasksCommand>("list")
 	.WithAlias("l")
 	.WithDescription("List all saved tasks");
+
+	it.AddCommand<ClearAllTasksCommand>("clear")
+	.WithDescription("Delete all saved tasks");
 });
 
 
