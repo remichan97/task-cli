@@ -18,9 +18,25 @@ public class DeleteTaskCommand : Command<DeleteTaskCommand.Settings>
 
 	public override int Execute([NotNull] CommandContext context, [NotNull] Settings settings)
 	{
-		TaskController.delete(settings.index);
+		List<task_cli.Model.Tasks> tasks = TaskController.taskList;
+		if (settings.index > tasks.Count)
+		{
+			AnsiConsole.MarkupLine("[red]Error:[/] No such task for the given task number");
+			return 0;
+		}
 
-		AnsiConsole.MarkupLine("[green]Success![/] The Task has been deleted");
+		Console.WriteLine("You have selected the following task");
+		Console.WriteLine("Task name: " + tasks[settings.index].TaskName);
+		Console.WriteLine("Created on: " + tasks[settings.index].CreatedOn);
+		Console.WriteLine("Task status: " + tasks[settings.index].Status);
+		
+		if (AnsiConsole.Confirm("[yellow2]Confirmation:[/] Would you like to delete the task?"))
+		{
+			TaskController.delete(settings.index);
+			AnsiConsole.MarkupLine("[green]Success![/] The Task has been deleted");
+		} else {
+			Console.WriteLine("Aborted.");
+		}
 
 		return 0;
 	}

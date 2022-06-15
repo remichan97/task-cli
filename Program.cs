@@ -16,15 +16,16 @@ app.Configure(it =>
 	.WithExample(new[] { "markdone", "1", "true" })
 	.WithExample(new[] { "md", "1", "false" });
 
-	it.AddCommand<MarkTasksCommand>("delete")
-	.WithAlias("d")
+	it.AddCommand<DeleteTaskCommand>("delete")
+	.WithAlias("del")
 	.WithDescription("Delete a task (specified by task number)")
 	.WithExample(new[] { "delete", "1" })
-	.WithExample(new[] { "d", "1", });
+	.WithExample(new[] { "del", "1", });
 
-	it.AddCommand<MarkTasksCommand>("list")
+	it.AddCommand<ListTasksCommand>("list")
 	.WithAlias("l")
 	.WithDescription("List all saved tasks");
 });
+
 
 app.Run(args);

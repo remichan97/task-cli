@@ -7,10 +7,8 @@ namespace task_cli.Model
 			Completed = 1,
 			Undone = 2,
 		}
-
 		internal string? TaskName { get; set; }
 		internal DateTime CreatedOn { get; set; } = DateTime.Now.ToLocalTime();
 		internal TaskStatus Status { get; set; } = TaskStatus.Undone;
-
 	}
 }

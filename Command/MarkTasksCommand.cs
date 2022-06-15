@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using Spectre.Console;
 using Spectre.Console.Cli;
+using task_cli.Controller;
 
 public class MarkTasksCommand : Command<MarkTasksCommand.Settings>
 {
@@ -19,14 +20,17 @@ public class MarkTasksCommand : Command<MarkTasksCommand.Settings>
 
 	public override int Execute([NotNull] CommandContext context, [NotNull] Settings settings)
 	{
+		List<task_cli.Model.Tasks> taskList = TaskController.taskList;
+
+		TaskController.markTasks(settings.index, settings.Done);
 
 		switch (settings.Done)
 		{
 			case true:
-				AnsiConsole.MarkupLine($"[green]Success![[/]] The task has been marked as done");
+				AnsiConsole.MarkupLine($"[green]Success![[/]] The task [turquoise2]{taskList[settings.index].TaskName}[/] has been marked as [lime]done[/]");
 				break;
 			case false:
-				AnsiConsole.MarkupLine($"[green]Success![[/]] The task has been marked as undone");
+				AnsiConsole.MarkupLine($"[green]Success![[/]] The task [turquoise2]{taskList[settings.index].TaskName}[/] has been marked as [orange1]undone[/]");
 				break;
 		}
 

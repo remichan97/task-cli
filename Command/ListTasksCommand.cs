@@ -8,7 +8,7 @@ public class ListTasksCommand : Command<ListTasksCommand.Settings>
 {
 	public class Settings : CommandSettings
 	{
-
+		//Empty since the command will not take or consume any arguments/parameters or any additional options
 	}
 
 	public override int Execute([NotNull] CommandContext context, [NotNull] Settings settings)
@@ -21,14 +21,29 @@ public class ListTasksCommand : Command<ListTasksCommand.Settings>
 			return 0;
 		}
 
+		Console.WriteLine("Below is the list of created tasks");
+
 		var table = new Table();
+		table.Centered();
 		table.Border(TableBorder.Rounded);
 		table.AddColumn("Task #");
 		table.AddColumn("Task Name");
 		table.AddColumn("Created on");
 		table.AddColumn("Status");
 
-		
+		for (var i = 0; i < taskList.Count; i++)
+		{
+			switch (taskList[i].Status)
+			{
+				case Tasks.TaskStatus.Completed:
+
+					break;
+				case Tasks.TaskStatus.Undone:
+
+					break;
+			}
+			
+		}
 
 		AnsiConsole.Write(table);
 
