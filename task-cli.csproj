@@ -6,7 +6,7 @@
     <RootNamespace>task_cli</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyName>$(MSBuildProjectName)</AssemblyName>
+    <AssemblyName>task</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
