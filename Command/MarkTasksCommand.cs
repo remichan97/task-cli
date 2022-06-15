@@ -13,15 +13,22 @@ public class MarkTasksCommand : Command<MarkTasksCommand.Settings>
 
 		public override ValidationResult Validate()
 		{
-			return index <= 0 ? ValidationResult.Error("No task selected. Aborted") : ValidationResult.Success();
+			return index <= 0 ? ValidationResult.Error("No task specified. Aborted") : ValidationResult.Success();
 		}
 	}
 
 	public override int Execute([NotNull] CommandContext context, [NotNull] Settings settings)
 	{
-		
 
-		AnsiConsole.MarkupLine($"");
+		switch (settings.Done)
+		{
+			case true:
+				AnsiConsole.MarkupLine($"[green]Success![[/]] The task has been marked as done");
+				break;
+			case false:
+				AnsiConsole.MarkupLine($"[green]Success![[/]] The task has been marked as undone");
+				break;
+		}
 
 		return 0;
 	}

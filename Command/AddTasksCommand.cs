@@ -11,7 +11,7 @@ public class AddTasksCommand : Command<AddTasksCommand.Settings>
 
 		public override ValidationResult Validate()
 		{
-			return TaskName is null ? ValidationResult.Error("Cannot create an empty task") : ValidationResult.Success();
+			return TaskName is null ? ValidationResult.Error("No task name specified. Aborted.") : ValidationResult.Success();
 		}
 	}
 
@@ -19,7 +19,7 @@ public class AddTasksCommand : Command<AddTasksCommand.Settings>
 	{
 
 
-		AnsiConsole.MarkupLine($"");
+		AnsiConsole.MarkupLine($"[green]Success![/] The task has been created");
 
 		return 0;
 	}

@@ -9,6 +9,11 @@ public class DeleteTaskCommand : Command<DeleteTaskCommand.Settings>
 	{
 		[CommandArgument(0, "[Task Name]")]
 		public int index { get; set; }
+
+		public override ValidationResult Validate()
+		{
+			return index <= 0 ? ValidationResult.Error("No task specified. Aborted") : ValidationResult.Success();
+		}
 	}
 
 	public override int Execute([NotNull] CommandContext context, [NotNull] Settings settings)
