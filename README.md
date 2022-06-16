@@ -29,7 +29,7 @@ task md "task_number" false
 task delete "task_number"
 ```
 
-# To-do list
+# Features current on the work
 - [x] A command to clear all saved tasks
 - [ ] An optional option in the `list` command to show unfinished(undone) tasks
 - [ ] On adding, marking task, display the affected task with updated change
