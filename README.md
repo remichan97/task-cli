@@ -31,10 +31,10 @@ tasklist delete "task_number"
 
 # Features currently in the work
 - [x] A command to clear all saved tasks
-- [ ] An optional option in the `list` command to show unfinished(undone) tasks
-- [ ] On adding, marking task, display the affected task with updated change
 - [ ] Have the task list persistent on each command launch
+- [ ] On adding, marking task, display the affected task with updated change
 - [ ] Clear the terminal each time `list` is called
+- [ ] An optional option in the `list` command to show unfinished(undone) tasks
 - [ ] Have a friendlier Usage/Error Message (currently using the default .NET Core Usage/Exception message on some area).
 - [ ] Make a release package without having to go through the hassle of preparing development environment
 
