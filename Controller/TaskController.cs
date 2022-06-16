@@ -9,7 +9,7 @@ namespace task_cli.Controller
 {
 	internal class TaskController
 	{
-		internal static List<Tasks> taskList = new List<Tasks>();
+		private static List<Tasks> taskList = new List<Tasks>();
 
 		internal static void add(string taskName)
 		{
@@ -39,6 +39,10 @@ namespace task_cli.Controller
 		internal static List<Tasks> listAll()
 		{
 			return taskList;
+		}
+
+		private void writeList() {
+			
 		}
 	}
 }

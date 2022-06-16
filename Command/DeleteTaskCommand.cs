@@ -18,7 +18,7 @@ public class DeleteTaskCommand : Command<DeleteTaskCommand.Settings>
 
 	public override int Execute([NotNull] CommandContext context, [NotNull] Settings settings)
 	{
-		List<task_cli.Model.Tasks> tasks = TaskController.taskList;
+		List<task_cli.Model.Tasks> tasks = TaskController.listAll();
 		if (settings.index > tasks.Count)
 		{
 			AnsiConsole.MarkupLine("[red]Error:[/] No such task for the given task number");

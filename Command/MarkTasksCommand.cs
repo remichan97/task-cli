@@ -20,7 +20,7 @@ public class MarkTasksCommand : Command<MarkTasksCommand.Settings>
 
 	public override int Execute([NotNull] CommandContext context, [NotNull] Settings settings)
 	{
-		List<task_cli.Model.Tasks> taskList = TaskController.taskList;
+		List<task_cli.Model.Tasks> taskList = TaskController.listAll();
 
 		TaskController.markTasks(settings.index, settings.Done);
 
