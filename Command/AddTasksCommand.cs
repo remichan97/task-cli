@@ -20,7 +20,7 @@ public class AddTasksCommand : Command<AddTasksCommand.Settings>
 	{
 		TaskController.add(settings.TaskName);
 
-		AnsiConsole.MarkupLine($"[green]Success![/] The task [turquoise2]${settings.TaskName}[/] has been created");
+		AnsiConsole.MarkupLine($"[green]Success![/] The task [turquoise2]{settings.TaskName}[/] has been created");
 
 		return 0;
 	}
