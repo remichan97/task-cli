@@ -35,7 +35,6 @@ tasklist delete "task_number"
 - [ ] On adding, marking task, display the affected task with updated change
 - [ ] Have the task list persistent on each command launch
 - [ ] Clear the terminal each time `list` is called
-- [ ] A command option in export command to selectively export saved tasks created on a certain date
 - [ ] Have a friendlier Usage/Error Message (currently using the default .NET Core Usage/Exception message on some area).
 - [ ] Make a release package without having to go through the hassle of preparing development environment
 
