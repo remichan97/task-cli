@@ -29,14 +29,12 @@ task md "task_number" false
 task delete "task_number"
 ```
 
-# Features current on the work
+# Features currently in the work
 - [x] A command to clear all saved tasks
 - [ ] An optional option in the `list` command to show unfinished(undone) tasks
 - [ ] On adding, marking task, display the affected task with updated change
 - [ ] Have the task list persistent on each command launch
 - [ ] Clear the terminal each time `list` is called
-- [ ] Export the task list into a file
-- [ ] Import a csv task list file to the app
 - [ ] A command option in export command to selectively export saved tasks created on a certain date
 - [ ] Have a friendlier Usage/Error Message (currently using the default .NET Core Usage/Exception message on some area).
 - [ ] Make a release package without having to go through the hassle of preparing development environment
