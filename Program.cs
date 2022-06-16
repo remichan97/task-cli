@@ -1,4 +1,7 @@
 ﻿using Spectre.Console.Cli;
+using task_cli.Utils;
+
+FileUtils.checkAndCreateDataFile();
 
 var app = new CommandApp();
 
