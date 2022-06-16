@@ -1,5 +1,5 @@
-# Welcome to task!
-"task" is a simple tasks/to-do list command line app that aims for simplicity and minimalistic
+# Welcome to tasklist!
+"tasklist" is a simple tasks/to-do list command line app that aims for simplicity and minimalistic for those who loves using terminal at a daily basis
 
 # Why I make this
 Inspired by [this](https://www.reddit.com/r/linux/comments/vbancx/please_i_made_a_cli_tool_that_greets_you_with/) post on the r/linux sub on Reddit. I wanted to create the same thing using .NET Core 6
@@ -14,19 +14,19 @@ Inspired by [this](https://www.reddit.com/r/linux/comments/vbancx/please_i_made_
 # Usage
 ```bash
 # Create a task
-task add "task_name"
-task a "task_name"
+tasklist add "task_name"
+tasklist a "task_name"
 
 # Mark a task as done
-task markdone "task_number" true
-task md "task_number" true
+tasklist markdone "task_number" true
+tasklist md "task_number" true
 
 # Mark a task as undone
-task markdone "task_number" false
-task md "task_number" false
+tasklist markdone "task_number" false
+tasklist md "task_number" false
 
 # Delete a task
-task delete "task_number"
+tasklist delete "task_number"
 ```
 
 # Features currently in the work
