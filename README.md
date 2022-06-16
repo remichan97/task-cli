@@ -31,6 +31,7 @@ task delete "task_number"
 
 # To-do list
 - [x] A command to clear all saved tasks
+- [ ] An optional option in the `list` command to show unfinished(undone) tasks
 - [ ] On adding, marking task, display the affected task with updated change
 - [ ] Have the task list persistent on each command launch
 - [ ] Clear the terminal each time `list` is called
