@@ -1,4 +1,4 @@
-# Welcome to tasklist!
+# Welcome to task!
 "tasklist" is a simple tasks/to-do list command line app that aims for simplicity and minimalistic for those who loves using terminal at a daily basis
 
 # Why I make this
@@ -14,19 +14,19 @@ Inspired by [this](https://www.reddit.com/r/linux/comments/vbancx/please_i_made_
 # Usage
 ```bash
 # Create a task
-tasklist add "task_name"
-tasklist a "task_name"
+task add "task_name"
+task a "task_name"
 
 # Mark a task as done
-tasklist markdone "task_number" true
-tasklist md "task_number" true
+task markdone "task_number" true
+task md "task_number" true
 
 # Mark a task as undone
-tasklist markdone "task_number" false
-tasklist md "task_number" false
+task markdone "task_number" false
+task md "task_number" false
 
 # Delete a task
-tasklist delete "task_number"
+task delete "task_number"
 ```
 
 # Features currently in the work
