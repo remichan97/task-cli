@@ -2,7 +2,7 @@
 "tasklist" is a simple tasks/to-do list command line app that aims for simplicity and minimalistic for those who loves using terminal at a daily basis
 
 # Why I make this
-Inspired by [this](https://www.reddit.com/r/linux/comments/vbancx/please_i_made_a_cli_tool_that_greets_you_with/) post on the r/linux sub on Reddit. I wanted to create the same thing using .NET Core 6
+Inspired by [this](https://www.reddit.com/r/linux/comments/vbancx/please_i_made_a_cli_tool_that_greets_you_with/) post on the r/linux sub on Reddit. I wanted to create the same thing using .NET Core 6. This project also act as a self-learning material for myself
 
 # Development setup
 - Have either [VS Code](https://code.visualstudio.com/) with the C# support installed or [Visual Studio](https://visualstudio.microsoft.com/) with `.Net Desktop Development` workload installed.
