@@ -26,20 +26,21 @@ public class ListTasksCommand : Command<ListTasksCommand.Settings>
 		var table = new Table();
 		table.Centered();
 		table.Border(TableBorder.Rounded);
-		table.AddColumn("Task #");
-		table.AddColumn("Task Name");
-		table.AddColumn("Created on");
-		table.AddColumn("Status");
+		table.BorderColor(Color.Blue);
+		table.AddColumn(new TableColumn("[bold]Task #[/]").Centered());
+		table.AddColumn(new TableColumn("[bold]Task Name[/]").Centered());
+		table.AddColumn(new TableColumn("[bold]Created on[/]").Centered());
+		table.AddColumn(new TableColumn("[bold]Status[/]").Centered());
 
 		for (var i = 0; i < taskList.Count; i++)
 		{
 			switch (taskList[i].Status)
 			{
 				case Tasks.TaskStatus.Completed:
-					table.AddRow(new string[] {(i + 1).ToString(), taskList[i].TaskName, taskList[i].CreatedOn.ToShortDateString(), $":check_mark_button:"});
+					table.AddRow(new string[] {(i + 1).ToString(), taskList[i].TaskName, taskList[i].CreatedOn.ToShortDateString(), $":check_mark_button:"}).Centered();
 					break;
 				case Tasks.TaskStatus.Undone:
-					table.AddRow(new string[] {(i + 1).ToString(), taskList[i].TaskName, taskList[i].CreatedOn.ToShortDateString(), $":cross_mark:"});
+					table.AddRow(new string[] {(i + 1).ToString(), taskList[i].TaskName, taskList[i].CreatedOn.ToShortDateString(), $":cross_mark:"}).Centered();
 					break;
 			}
 			
