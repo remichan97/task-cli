@@ -6,7 +6,7 @@ namespace task_cli.Utils
 {
 	internal class FileUtils
 	{
-		private static string fileName = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\tasklist.json";
+		private static readonly string fileName = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\tasklist.json";
 
 		/// <summary>
 		/// A function to create a file for persist the list store in the program, also can be used to wipe the file per requested
