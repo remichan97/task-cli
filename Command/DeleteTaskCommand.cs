@@ -12,7 +12,7 @@ public class DeleteTaskCommand : Command<DeleteTaskCommand.Settings>
 
 		public override ValidationResult Validate()
 		{
-			return index <= 0 ? ValidationResult.Error("No task specified. Aborted") : ValidationResult.Success();
+			return index <= 0 ? ValidationResult.Error("No task found for the given task number. Aborted") : ValidationResult.Success();
 		}
 	}
 
