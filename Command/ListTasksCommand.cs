@@ -8,7 +8,6 @@ public class ListTasksCommand : Command<ListTasksCommand.Settings>
 {
 	public class Settings : CommandSettings
 	{
-		//Empty since the command will not take or consume any arguments/parameters or any additional options
 		[CommandOption("-u")]
 		public bool undone { get; set; }
 	}
