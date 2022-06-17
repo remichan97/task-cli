@@ -8,9 +8,9 @@ public class MarkTasksCommand : Command<MarkTasksCommand.Settings>
 {
 	public class Settings : CommandSettings
 	{
-		[CommandArgument(0, "[Task Name]")]
+		[CommandArgument(0, "<task_number>")]
 		public int index { get; set; }
-		[CommandArgument(1, "[true/false]")]
+		[CommandArgument(1, "<true/false>")]
 		public bool Done {get;set;}
 
 		public override ValidationResult Validate()

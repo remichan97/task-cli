@@ -12,13 +12,11 @@ app.Configure(it =>
 	it.AddCommand<AddTasksCommand>("add")
 	.WithAlias("a")
 	.WithDescription("Add a task to the to-do list")
-	.WithExample(new[] { "add", "\"Do homework\"" })
-	.WithExample(new[] { "a", "\"Do homework\"" });
+	.WithExample(new[] { "add", "\"Do homework\"" });
 
 	it.AddCommand<MarkTasksCommand>("markdone")
 	.WithAlias("md")
 	.WithDescription("Mark a task (specified by task number) as done or undone (true/false)")
-	.WithExample(new[] { "markdone", "1", "true" })
 	.WithExample(new[] { "md", "1", "false" });
 
 	it.AddCommand<DeleteTaskCommand>("delete")
@@ -33,6 +31,10 @@ app.Configure(it =>
 
 	it.AddCommand<ClearAllTasksCommand>("clear")
 	.WithDescription("Delete all saved tasks");
+
+	it.AddCommand<SearchTasksCommand>("search")
+	.WithAlias("s")
+	.WithDescription("Search for tasks in the saved task list");
 
 });
 

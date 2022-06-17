@@ -7,7 +7,7 @@ public class AddTasksCommand : Command<AddTasksCommand.Settings>
 {
 	public class Settings : CommandSettings
 	{
-		[CommandArgument(0, "[Task Name]")]
+		[CommandArgument(0, "<task_name>")]
 		public string? TaskName { get; set; }
 
 		public override ValidationResult Validate()

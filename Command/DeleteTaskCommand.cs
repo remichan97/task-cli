@@ -7,7 +7,7 @@ public class DeleteTaskCommand : Command<DeleteTaskCommand.Settings>
 {
 	public class Settings : CommandSettings
 	{
-		[CommandArgument(0, "[1]")]
+		[CommandArgument(0, "<task_number>")]
 		public int index { get; set; }
 
 		public override ValidationResult Validate()
