@@ -9,6 +9,8 @@ public class ListTasksCommand : Command<ListTasksCommand.Settings>
 	public class Settings : CommandSettings
 	{
 		//Empty since the command will not take or consume any arguments/parameters or any additional options
+		[CommandOption("-u")]
+		public bool undone { get; set; }
 	}
 
 	public override int Execute([NotNull] CommandContext context, [NotNull] Settings settings)
@@ -21,7 +23,18 @@ public class ListTasksCommand : Command<ListTasksCommand.Settings>
 			return 0;
 		}
 
+		if (taskList.Count == 0 && settings.undone) {
+			AnsiConsole.MarkupLine("[green]You have no undone tasks![/]");
+			return 0;
+		}
+
 		Console.Clear();
+
+		if (settings.undone)
+		{
+			Console.WriteLine("Showing undone tasks only");
+			taskList = taskList.Where(it => it.Status == Tasks.TaskStatus.Undone).ToList();
+		}
 
 		var table = new Table();
 		table.Centered();

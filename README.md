@@ -27,6 +27,9 @@ task md "task_number" false
 
 # Delete a task
 task delete "task_number"
+
+# List undone tasks
+task list -u
 ```
 
 # Features currently in the work
@@ -36,7 +39,7 @@ task delete "task_number"
 - [ ] Have a date and time display, and/or current weather display
 - [x] On marking task, display the affected task with updated change
 - [x] Clear the terminal each time `list` is called
-- [ ] An optional option in the `list` command to show unfinished(undone) tasks
+- [x] An optional option in the `list` command to show unfinished(undone) tasks
 - [ ] Have a friendlier Usage/Error Message (currently using the default .NET Core Usage/Exception message on some area).
 - [ ] Make a release package without having to go through the hassle of preparing development environment
 
