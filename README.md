@@ -6,6 +6,7 @@ Inspired by [this](https://www.reddit.com/r/linux/comments/vbancx/please_i_made_
 
 # Development setup
 - Have either [VS Code](https://code.visualstudio.com/) with the C# support installed or [Visual Studio](https://visualstudio.microsoft.com/) with `.Net Desktop Development` workload installed.
+- [.NET 6.0 SDK](https://dotnet.microsoft.com/en-us/download) if using VS Code
 - Clone this repository
 - Open the cloned repository in VS Code or Visual Studio
 - (Skip this if you are using Visual Studio) Run the command ```dotnet restore``` in terminal to install all dependency used in this project
