@@ -32,6 +32,7 @@ task delete "task_number"
 # Features currently in the work
 - [x] A command to clear all saved tasks
 - [x] Have the task list persistent on each command launch
+- [ ] A command to search a task by keyword
 - [ ] On adding, marking task, display the affected task with updated change
 - [ ] Clear the terminal each time `list` is called
 - [ ] An optional option in the `list` command to show unfinished(undone) tasks

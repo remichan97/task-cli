@@ -11,12 +11,12 @@ namespace task_cli.Utils
 		/// <summary>
 		/// A function to create a file for persist the list store in the program
 		/// </summary>
-		internal static void checkAndCreateDataFile()
+		internal static void checkAndCreateDataFile(bool clear)
 		{
 			//Check whether a file exists, if it does NOT exists, create the file in the current user folder
-			if (File.Exists(fileName) == false)
+			if (File.Exists(fileName) == false || clear == true)
 			{
-				File.Open(fileName, FileMode.CreateNew).Dispose();
+				File.Open(fileName, FileMode.Create).Dispose();
 			}
 		}
 

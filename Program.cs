@@ -1,12 +1,14 @@
 ﻿using Spectre.Console.Cli;
 using task_cli.Utils;
 
-FileUtils.checkAndCreateDataFile();
+FileUtils.checkAndCreateDataFile(false);
 
 var app = new CommandApp();
 
 app.Configure(it =>
 {
+	it.SetApplicationName("task");
+
 	it.AddCommand<AddTasksCommand>("add")
 	.WithAlias("a")
 	.WithDescription("Add a task to the to-do list")
@@ -31,7 +33,7 @@ app.Configure(it =>
 
 	it.AddCommand<ClearAllTasksCommand>("clear")
 	.WithDescription("Delete all saved tasks");
-});
 
+});
 
 app.Run(args);

@@ -21,8 +21,6 @@ public class ListTasksCommand : Command<ListTasksCommand.Settings>
 			return 0;
 		}
 
-		Console.WriteLine("Below is the list of created tasks");
-
 		var table = new Table();
 		table.Centered();
 		table.Border(TableBorder.Rounded);

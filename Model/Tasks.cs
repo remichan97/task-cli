@@ -1,5 +1,6 @@
 namespace task_cli.Model
 {
+	// Need to be public so the json serialise and deserialise won't return empty json
 	internal class Tasks
 	{
 		internal enum TaskStatus
