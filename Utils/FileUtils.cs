@@ -38,7 +38,7 @@ namespace task_cli.Utils
 		internal static List<Tasks> ReadJsonFile()
 		{
 			string json = File.ReadAllText(fileName);
-			return json == "" ? new List<Tasks>() : JsonSerializer.Deserialize<List<Tasks>>(json);
+			return json == "" || json == "[]" ? new List<Tasks>() : JsonSerializer.Deserialize<List<Tasks>>(json);
 		}
 	}
 }

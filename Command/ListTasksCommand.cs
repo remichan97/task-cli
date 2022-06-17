@@ -15,13 +15,13 @@ public class ListTasksCommand : Command<ListTasksCommand.Settings>
 	{
 		List<Tasks> taskList = TaskController.listAll();
 
-		Console.Clear();
-
 		if (taskList.Count == 0)
 		{
 			AnsiConsole.MarkupLine("[Yellow]No task created![/] Enjoy your day off~");
 			return 0;
 		}
+
+		Console.Clear();
 
 		var table = new Table();
 		table.Centered();
@@ -43,7 +43,6 @@ public class ListTasksCommand : Command<ListTasksCommand.Settings>
 					table.AddRow(new string[] {(i + 1).ToString(), taskList[i].TaskName, taskList[i].CreatedOn.ToShortDateString(), $":cross_mark:"}).Centered();
 					break;
 			}
-			
 		}
 
 		AnsiConsole.Write(table);

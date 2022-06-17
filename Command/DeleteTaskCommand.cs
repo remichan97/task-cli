@@ -24,15 +24,15 @@ public class DeleteTaskCommand : Command<DeleteTaskCommand.Settings>
 			AnsiConsole.MarkupLine("[red]Error:[/] No such task for the given task number");
 			return 0;
 		}
-
+		int pos = settings.index - 1;
 		Console.WriteLine("You have selected the following task");
-		Console.WriteLine("Task name: " + tasks[settings.index].TaskName);
-		Console.WriteLine("Created on: " + tasks[settings.index].CreatedOn);
-		Console.WriteLine("Task status: " + tasks[settings.index].Status);
+		Console.WriteLine("Task name: " + tasks[pos].TaskName);
+		Console.WriteLine("Created on: " + tasks[pos].CreatedOn.ToShortDateString());
+		Console.WriteLine("Task status: " + tasks[pos].Status);
 		
 		if (AnsiConsole.Confirm("[yellow2]Confirmation:[/] Would you like to delete the task?"))
 		{
-			TaskController.delete(settings.index);
+			TaskController.delete(pos);
 			AnsiConsole.MarkupLine("[green]Success![/] The Task has been deleted");
 		} else {
 			Console.WriteLine("Aborted.");
