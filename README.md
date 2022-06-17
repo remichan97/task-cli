@@ -33,6 +33,7 @@ task delete "task_number"
 - [x] A command to clear all saved tasks
 - [x] Have the task list persistent on each command launch
 - [ ] A command to search a task by keyword
+- [ ] Have a date and time display, and/or current weather display
 - [x] On marking task, display the affected task with updated change
 - [x] Clear the terminal each time `list` is called
 - [ ] An optional option in the `list` command to show unfinished(undone) tasks
