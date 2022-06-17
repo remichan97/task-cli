@@ -37,7 +37,6 @@ task list -u
 - [x] A command to clear all saved tasks
 - [x] Have the task list persistent on each command launch
 - [x] A command to search a task by keyword
-- [ ] Have a date and time display when `list` is invoked
 - [x] On marking task, display the affected task with updated change
 - [x] Clear the terminal each time `list` is called
 - [x] An optional option in the `list` command to show unfinished(undone) tasks
