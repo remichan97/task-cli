@@ -9,11 +9,12 @@ namespace task_cli.Utils
 		private static string fileName = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\tasklist.json";
 
 		/// <summary>
-		/// A function to create a file for persist the list store in the program
+		/// A function to create a file for persist the list store in the program, also can be used to wipe the file per requested
 		/// </summary>
 		internal static void checkAndCreateDataFile(bool clear)
 		{
-			//Check whether a file exists, if it does NOT exists, create the file in the current user folder
+			// Check whether a file exists, if it does NOT exists, create the file in the current user folder
+			// Or if user requested that the file will be cleared, clear everything in the file
 			if (File.Exists(fileName) == false || clear == true)
 			{
 				File.Open(fileName, FileMode.Create).Dispose();

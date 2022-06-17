@@ -15,6 +15,8 @@ public class ListTasksCommand : Command<ListTasksCommand.Settings>
 	{
 		List<Tasks> taskList = TaskController.listAll();
 
+		Console.Clear();
+
 		if (taskList.Count == 0)
 		{
 			AnsiConsole.MarkupLine("[Yellow]No task created![/] Enjoy your day off~");
@@ -34,10 +36,10 @@ public class ListTasksCommand : Command<ListTasksCommand.Settings>
 			switch (taskList[i].Status)
 			{
 				case Tasks.TaskStatus.Completed:
-
+					table.AddRow(new string[] {(i + 1).ToString(), taskList[i].TaskName, taskList[i].CreatedOn.ToShortDateString(), $":check_mark_button:"});
 					break;
 				case Tasks.TaskStatus.Undone:
-
+					table.AddRow(new string[] {(i + 1).ToString(), taskList[i].TaskName, taskList[i].CreatedOn.ToShortDateString(), $":cross_mark:"});
 					break;
 			}
 			
