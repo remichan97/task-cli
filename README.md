@@ -41,7 +41,6 @@ task list -u
 - [x] Clear the terminal each time `list` is called
 - [x] An optional option in the `list` command to show unfinished(undone) tasks
 - [ ] Have a friendlier Error Message (currently using the default Exception message on some area).
-- [ ] Make a release package without having to go through the hassle of preparing development environment
 
 # NuGet Package used in the project
 [Spectre Console](https://github.com/spectreconsole/spectre.console)
