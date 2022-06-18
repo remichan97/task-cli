@@ -11,7 +11,7 @@ public class MarkTasksCommand : Command<MarkTasksCommand.Settings>
 		[CommandArgument(0, "<task_number>")]
 		public string? index { get; set; }
 		[CommandArgument(1, "<true/false>")]
-		public bool Done {get;set;}
+		public bool Done { get; set; }
 
 		public override ValidationResult Validate()
 		{
@@ -57,15 +57,15 @@ public class MarkTasksCommand : Command<MarkTasksCommand.Settings>
 		table.AddColumn(new TableColumn("[bold]Created on[/]").Centered());
 		table.AddColumn(new TableColumn("[bold]Status[/]").Centered());
 
-			switch (taskList[pops].Status)
-			{
-				case Tasks.TaskStatus.Completed:
-					table.AddRow(new string[] {settings.index.ToString(), taskList[pops].TaskName, taskList[pops].CreatedOn.ToShortDateString(), $":check_mark_button:"}).Centered();
-					break;
-				case Tasks.TaskStatus.Undone:
-					table.AddRow(new string[] {settings.index.ToString(), taskList[pops].TaskName, taskList[pops].CreatedOn.ToShortDateString(), $":cross_mark:"}).Centered();
-					break;
-			}
+		switch (taskList[pops].Status)
+		{
+			case Tasks.TaskStatus.Completed:
+				table.AddRow(new string[] { settings.index.ToString(), taskList[pops].TaskName, taskList[pops].CreatedOn.ToShortDateString(), $":check_mark_button:" }).Centered();
+				break;
+			case Tasks.TaskStatus.Undone:
+				table.AddRow(new string[] { settings.index.ToString(), taskList[pops].TaskName, taskList[pops].CreatedOn.ToShortDateString(), $":cross_mark:" }).Centered();
+				break;
+		}
 
 		AnsiConsole.Write(table);
 

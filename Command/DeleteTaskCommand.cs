@@ -42,12 +42,14 @@ public class DeleteTaskCommand : Command<DeleteTaskCommand.Settings>
 		Console.WriteLine("Task name: " + tasks[pos].TaskName);
 		Console.WriteLine("\nCreated on: " + tasks[pos].CreatedOn.ToShortDateString());
 		Console.WriteLine("\nTask status: " + tasks[pos].Status + "\n");
-		
+
 		if (AnsiConsole.Confirm("[yellow2]Confirmation:[/] Would you like to delete the task?"))
 		{
 			TaskController.delete(pos);
 			AnsiConsole.MarkupLine("[green]Success![/] The Task has been deleted");
-		} else {
+		}
+		else
+		{
 			Console.WriteLine("Aborted.");
 		}
 

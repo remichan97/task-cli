@@ -40,10 +40,10 @@ public class SearchTasksCommand : Command<SearchTasksCommand.Settings>
 			switch (taskList[i].Status)
 			{
 				case Tasks.TaskStatus.Completed:
-					table.AddRow(new string[] {(i + 1).ToString(), taskList[i].TaskName, taskList[i].CreatedOn.ToShortDateString(), $":check_mark_button:"}).Centered();
+					table.AddRow(new string[] { (i + 1).ToString(), taskList[i].TaskName, taskList[i].CreatedOn.ToShortDateString(), $":check_mark_button:" }).Centered();
 					break;
 				case Tasks.TaskStatus.Undone:
-					table.AddRow(new string[] {(i + 1).ToString(), taskList[i].TaskName, taskList[i].CreatedOn.ToShortDateString(), $":cross_mark:"}).Centered();
+					table.AddRow(new string[] { (i + 1).ToString(), taskList[i].TaskName, taskList[i].CreatedOn.ToShortDateString(), $":cross_mark:" }).Centered();
 					break;
 			}
 		}

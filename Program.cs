@@ -38,4 +38,5 @@ app.Configure(it =>
 	.WithDescription("Search for tasks in the saved task list");
 
 });
-	app.Run(args);
+
+app.Run(args);
