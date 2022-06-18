@@ -58,17 +58,17 @@ public class MarkTasksCommand : Command<MarkTasksCommand.Settings>
 		table.Border(TableBorder.Rounded);
 		table.BorderColor(Color.Blue);
 		table.AddColumn(new TableColumn("[bold]Task #[/]").Centered());
-		table.AddColumn(new TableColumn("[bold]Task Name[/]").Centered());
-		table.AddColumn(new TableColumn("[bold]Created on[/]").Centered());
+		table.AddColumn(new TableColumn("[bold]Task Name[/]"));
+		table.AddColumn(new TableColumn("[bold]Created on[/]"));
 		table.AddColumn(new TableColumn("[bold]Status[/]").Centered());
 
 		switch (taskList[pops].Status)
 		{
 			case Tasks.TaskStatus.Completed:
-				table.AddRow(new string[] { settings.index.ToString(), taskList[pops].TaskName, taskList[pops].CreatedOn.ToShortDateString(), $":check_mark_button:" }).Centered();
+				table.AddRow(new string[] { settings.index.ToString(), taskList[pops].TaskName, taskList[pops].CreatedOn.ToShortDateString(), $":check_mark_button:" });
 				break;
 			case Tasks.TaskStatus.Undone:
-				table.AddRow(new string[] { settings.index.ToString(), taskList[pops].TaskName, taskList[pops].CreatedOn.ToShortDateString(), $":cross_mark:" }).Centered();
+				table.AddRow(new string[] { settings.index.ToString(), taskList[pops].TaskName, taskList[pops].CreatedOn.ToShortDateString(), $":cross_mark:" });
 				break;
 		}
 
