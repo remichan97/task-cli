@@ -20,7 +20,7 @@ public class DeleteTaskCommand : Command<DeleteTaskCommand.Settings>
 			}
 			catch (System.Exception)
 			{
-				return ValidationResult.Error("\nIncorrect syntax. 'delete' requires a task number to delete a task.\n\nYou can use 'list' to list all task or use 'search' to look for a task with its task number.\n\nAborted.");
+				return ValidationResult.Error("\nIncorrect syntax. 'delete' requires a task number to delete a task.\n\nYou can use 'list' to list all tasks or use 'search' to look for a task with its task number.\n\nAborted.");
 			}
 
 			return ValidationResult.Success();

@@ -18,10 +18,15 @@ public class MarkTasksCommand : Command<MarkTasksCommand.Settings>
 			try
 			{
 				int ind = Int32.Parse(index);
+
+				if (ind == 0)
+				{
+					return ValidationResult.Error("Task number cannot be zero. Aborted");
+				}
 			}
 			catch (System.Exception)
 			{
-				return ValidationResult.Error("Incorrect syntax. 'markdone' requires a task number to delete a task.\n\nYou can use 'list' to list all task or use 'search' to look for a task with its task number.\n\nAborted.");
+				return ValidationResult.Error("Incorrect syntax. 'markdone' requires a task number to delete a task.\n\nYou can use 'list' to list all tasks or use 'search' to look for a task with its task number.\n\nAborted.");
 			}
 
 			return ValidationResult.Success();
