@@ -8,6 +8,11 @@ namespace task_cli.Utils
 	{
 		private static readonly string fileName = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\tasklist.json";
 
+		private static readonly JsonSerializerOptions opt = new JsonSerializerOptions()
+		{
+			WriteIndented = true
+		};
+
 		/// <summary>
 		/// A function to create a file for persist the list store in the program, also can be used to wipe the file per requested
 		/// </summary>
@@ -27,7 +32,7 @@ namespace task_cli.Utils
 		/// <param name="tasksList">The list need to be saved</param>
 		internal static void WriteJsonFile(List<Tasks> tasksList)
 		{
-			var json = JsonSerializer.Serialize(tasksList);
+			var json = JsonSerializer.Serialize(tasksList, opt);
 			File.WriteAllText(fileName, json);
 		}
 
