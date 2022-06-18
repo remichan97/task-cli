@@ -28,9 +28,14 @@ task md "task_number" false
 
 # Delete a task
 task delete "task_number"
+task del "task_number"
 
 # List undone tasks
 task list -u
+task ls -u
+
+# Search a task
+task search "keyword"
 ```
 
 # Features currently in the work
