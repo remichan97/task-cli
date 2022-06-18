@@ -31,7 +31,7 @@ public class ListTasksCommand : Command<ListTasksCommand.Settings>
 
 		if (settings.undone)
 		{
-			Console.WriteLine("Showing undone tasks only");
+			Console.WriteLine("Displaying undone tasks only");
 			taskList = taskList.Where(it => it.Status == Tasks.TaskStatus.Undone).ToList();
 		}
 

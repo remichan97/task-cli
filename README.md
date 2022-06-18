@@ -40,7 +40,7 @@ task list -u
 - [x] On marking task, display the affected task with updated change
 - [x] Clear the terminal each time `list` is called
 - [x] An optional option in the `list` command to show unfinished(undone) tasks
-- [ ] Have a friendlier Error Message (currently using the default Exception message on some area).
+- [x] Have a friendlier Error Message (currently using the default Exception message on some area).
 
 # NuGet Package used in the project
 [Spectre Console](https://github.com/spectreconsole/spectre.console)

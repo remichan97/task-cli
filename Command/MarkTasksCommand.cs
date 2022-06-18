@@ -9,21 +9,32 @@ public class MarkTasksCommand : Command<MarkTasksCommand.Settings>
 	public class Settings : CommandSettings
 	{
 		[CommandArgument(0, "<task_number>")]
-		public int index { get; set; }
+		public string? index { get; set; }
 		[CommandArgument(1, "<true/false>")]
 		public bool Done {get;set;}
 
 		public override ValidationResult Validate()
 		{
-			return index <= 0 ? ValidationResult.Error("No task found for the given task number. Aborted") : ValidationResult.Success();
+			try
+			{
+				int ind = Int32.Parse(index);
+			}
+			catch (System.Exception)
+			{
+				return ValidationResult.Error("Incorrect syntax. 'markdone' requires a task number to delete a task.\n\nYou can use 'list' to list all task or use 'search' to look for a task with its task number.\n\nAborted.");
+			}
+
+			return ValidationResult.Success();
 		}
 	}
 
 	public override int Execute([NotNull] CommandContext context, [NotNull] Settings settings)
 	{
+		int index = Int32.Parse(settings.index);
+
 		List<task_cli.Model.Tasks> taskList = TaskController.listAll();
 
-		int pops = settings.index - 1;
+		int pops = index - 1;
 
 		TaskController.markTasks(pops, settings.Done);
 

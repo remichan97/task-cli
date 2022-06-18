@@ -10,11 +10,6 @@ public class SearchTasksCommand : Command<SearchTasksCommand.Settings>
 	{
 		[CommandArgument(0, "<keyword>")]
 		public string? keyword { get; set; }
-
-		public override ValidationResult Validate()
-		{
-			return keyword is null ? ValidationResult.Error("No keyword specified. Aborted") : ValidationResult.Success();
-		}
 	}
 
 	public override int Execute([NotNull] CommandContext context, [NotNull] Settings settings)

@@ -1,4 +1,5 @@
-﻿using Spectre.Console.Cli;
+﻿using Spectre.Console;
+using Spectre.Console.Cli;
 using task_cli.Utils;
 
 FileUtils.checkAndCreateDataFile(false);
@@ -37,5 +38,4 @@ app.Configure(it =>
 	.WithDescription("Search for tasks in the saved task list");
 
 });
-
-app.Run(args);
+	app.Run(args);

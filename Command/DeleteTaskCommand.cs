@@ -8,27 +8,40 @@ public class DeleteTaskCommand : Command<DeleteTaskCommand.Settings>
 	public class Settings : CommandSettings
 	{
 		[CommandArgument(0, "<task_number>")]
-		public int index { get; set; }
+		public string? index { get; set; }
 
 		public override ValidationResult Validate()
 		{
-			return index <= 0 ? ValidationResult.Error("No task found for the given task number. Aborted") : ValidationResult.Success();
+			try
+			{
+				int ind = Int32.Parse(index);
+
+				if (ind == 0) return ValidationResult.Error("Task number cannot be zero. Aborted");
+			}
+			catch (System.Exception)
+			{
+				return ValidationResult.Error("\nIncorrect syntax. 'delete' requires a task number to delete a task.\n\nYou can use 'list' to list all task or use 'search' to look for a task with its task number.\n\nAborted.");
+			}
+
+			return ValidationResult.Success();
 		}
 	}
 
 	public override int Execute([NotNull] CommandContext context, [NotNull] Settings settings)
 	{
+		int index = Int32.Parse(settings.index);
 		List<task_cli.Model.Tasks> tasks = TaskController.listAll();
-		if (settings.index > tasks.Count)
+
+		if (index > tasks.Count)
 		{
 			AnsiConsole.MarkupLine("[red]Error:[/] No such task for the given task number");
 			return 0;
 		}
-		int pos = settings.index - 1;
-		Console.WriteLine("You have selected the following task");
+		int pos = index - 1;
+		Console.WriteLine("You have selected the following task\n");
 		Console.WriteLine("Task name: " + tasks[pos].TaskName);
-		Console.WriteLine("Created on: " + tasks[pos].CreatedOn.ToShortDateString());
-		Console.WriteLine("Task status: " + tasks[pos].Status);
+		Console.WriteLine("\nCreated on: " + tasks[pos].CreatedOn.ToShortDateString());
+		Console.WriteLine("\nTask status: " + tasks[pos].Status + "\n");
 		
 		if (AnsiConsole.Confirm("[yellow2]Confirmation:[/] Would you like to delete the task?"))
 		{
