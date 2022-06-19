@@ -30,12 +30,6 @@ public class ListTasksCommand : Command<ListTasksCommand.Settings>
 
 		Console.Clear();
 
-		if (settings.undone)
-		{
-			Console.WriteLine("Displaying undone tasks only");
-			taskList = taskList.Where(it => it.Status == Tasks.TaskStatus.Undone).ToList();
-		}
-
 		var table = new Table();
 		table.Centered();
 		table.Border(TableBorder.Rounded);
@@ -44,6 +38,22 @@ public class ListTasksCommand : Command<ListTasksCommand.Settings>
 		table.AddColumn(new TableColumn("[bold]Task Name[/]"));
 		table.AddColumn(new TableColumn("[bold]Created on[/]"));
 		table.AddColumn(new TableColumn("[bold]Status[/]").Centered());
+
+		if (settings.undone)
+		{
+			Console.WriteLine("Displaying undone tasks only");
+
+			taskList.ForEach(it =>
+			{
+				if (it.Status == Tasks.TaskStatus.Undone) table.AddRow(new string[] { (taskList.FindIndex(x => x.TaskName == it.TaskName) + 1).ToString(), it.TaskName!, it.CreatedOn.ToShortDateString(), $":cross_mark:" });
+
+			});
+
+			AnsiConsole.Write(table);
+
+			return 0;
+
+		}
 
 		for (var i = 0; i < taskList.Count; i++)
 		{
