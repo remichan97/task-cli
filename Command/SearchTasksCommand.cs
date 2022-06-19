@@ -15,16 +15,7 @@ public class SearchTasksCommand : Command<SearchTasksCommand.Settings>
 	public override int Execute([NotNull] CommandContext context, [NotNull] Settings settings)
 	{
 
-		List<Tasks> taskList = TaskController.listAll().FindAll(it => it.TaskName!.Contains(settings.keyword!));
-
-		if (taskList.Count == 0)
-		{
-			AnsiConsole.MarkupLine($"No tasks found for the term [turquoise2]{settings.keyword}[/]");
-			return 0;
-		}
-
-		AnsiConsole.MarkupLine($"[green3_1]{taskList.Count}[/] task(s) found for the term [turquoise2]{settings.keyword}[/]");
-
+		List<Tasks> taskList = TaskController.listAll();
 
 		var table = new Table();
 		table.Centered();
@@ -35,20 +26,27 @@ public class SearchTasksCommand : Command<SearchTasksCommand.Settings>
 		table.AddColumn(new TableColumn("[bold]Created on[/]").Centered());
 		table.AddColumn(new TableColumn("[bold]Status[/]").Centered());
 
-		for (var i = 0; i < taskList.Count; i++)
-		{
-			switch (taskList[i].Status)
-			{
-				case Tasks.TaskStatus.Completed:
-					table.AddRow(new string[] { (i + 1).ToString(), taskList[i].TaskName!, taskList[i].CreatedOn.ToShortDateString(), $":check_mark_button:" }).Centered();
-					break;
-				case Tasks.TaskStatus.Undone:
-					table.AddRow(new string[] { (i + 1).ToString(), taskList[i].TaskName!, taskList[i].CreatedOn.ToShortDateString(), $":cross_mark:" }).Centered();
-					break;
-			}
-		}
+		int count = 0;
 
-		AnsiConsole.Write(table);
+		taskList.ForEach(it =>
+		{
+			if (it.TaskName!.Contains(settings.keyword!))
+			{
+				count++;
+				switch (it.Status)
+				{
+					case Tasks.TaskStatus.Completed:
+						table.AddRow(new string[] { (taskList.FindIndex(x => x.TaskName == it.TaskName) + 1).ToString(), it.TaskName!, it.CreatedOn.ToShortDateString(), $":check_mark_button:" }).Centered();
+						break;
+					case Tasks.TaskStatus.Undone:
+						table.AddRow(new string[] { (taskList.FindIndex(x => x.TaskName == it.TaskName) + 1).ToString(), it.TaskName!, it.CreatedOn.ToShortDateString(), $":cross_mark:" }).Centered();
+						break;
+				}
+			}
+		});
+		AnsiConsole.MarkupLine($"[green3_1]{count}[/] task(s) found for the term [turquoise2]{settings.keyword}[/]");
+
+		if (count > 0) AnsiConsole.Write(table);
 
 		return 0;
 	}
