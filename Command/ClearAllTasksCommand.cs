@@ -13,7 +13,7 @@ public class ClearAllTasksCommand : Command<ClearAllTasksCommand.Settings>
 
 	public override int Execute([NotNull] CommandContext context, [NotNull] Settings settings)
 	{
-		if (AnsiConsole.Confirm($"[yellow]Confirmation:[/] All saved tasks will be deleted.\nThis action is irrevisible.\nWould you like to clear the task list?"))
+		if (AnsiConsole.Confirm($"[yellow]Confirmation:[/] All saved tasks will be deleted.\nThis action is irrevisible.\nDo you still want to do this?"))
 		{
 			FileUtils.checkAndCreateDataFile(true);
 			AnsiConsole.MarkupLine($"[green]Success![/] All saved tasks has been deleted.");
