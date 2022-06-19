@@ -4,13 +4,10 @@
 # Why I make this
 Inspired by [this](https://www.reddit.com/r/linux/comments/vbancx/please_i_made_a_cli_tool_that_greets_you_with/) post on the r/linux sub on Reddit. I wanted to create the same thing using .NET Core 6. This project also act as a self-learning material for myself
 
-# Development setup
-- Have either [VS Code](https://code.visualstudio.com/) with the C# support installed or [Visual Studio](https://visualstudio.microsoft.com/) with `.Net Desktop Development` workload installed.
-- [.NET 6.0 SDK](https://dotnet.microsoft.com/en-us/download) if using VS Code
-- Clone this repository
-- Open the cloned repository in VS Code or Visual Studio
-- (Skip this if you are using Visual Studio) Run the command ```dotnet restore``` in terminal to install all dependency used in this project
-- Run the project
+# Installation
+Please make sure that you have the [.NET 6 Runtime](https://dotnet.microsoft.com/en-us/download) installed on your machine before running the app.
+
+The provided package are ready to use when downloaded. Just [download](https://github.com/remichan97/task-cli/releases) the release, extract it to somewhere, and call the terminal on the extracted folder, and the app is ready to use!
 
 # Usage
 ```bash
@@ -37,6 +34,14 @@ task ls -u
 # Search a task
 task search "keyword"
 ```
+
+# Development setup
+- Have either [VS Code](https://code.visualstudio.com/) with the C# support installed or [Visual Studio](https://visualstudio.microsoft.com/) with `.Net Desktop Development` workload installed.
+- [.NET 6.0 SDK](https://dotnet.microsoft.com/en-us/download) if using VS Code
+- Clone this repository
+- Open the cloned repository in VS Code or Visual Studio
+- (Skip this if you are using Visual Studio) Run the command ```dotnet restore``` in terminal to install all dependency used in this project
+- Run the project
 
 # Features currently in the work
 - [x] A command to clear all saved tasks
