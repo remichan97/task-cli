@@ -50,10 +50,10 @@ public class ListTasksCommand : Command<ListTasksCommand.Settings>
 			switch (taskList[i].Status)
 			{
 				case Tasks.TaskStatus.Completed:
-					table.AddRow(new string[] { (i + 1).ToString(), taskList[i].TaskName, taskList[i].CreatedOn.ToShortDateString(), $":check_mark_button:" });
+					table.AddRow(new string[] { (i + 1).ToString(), taskList[i].TaskName!, taskList[i].CreatedOn.ToShortDateString(), $":check_mark_button:" });
 					break;
 				case Tasks.TaskStatus.Undone:
-					table.AddRow(new string[] { (i + 1).ToString(), taskList[i].TaskName, taskList[i].CreatedOn.ToShortDateString(), $":cross_mark:" });
+					table.AddRow(new string[] { (i + 1).ToString(), taskList[i].TaskName!, taskList[i].CreatedOn.ToShortDateString(), $":cross_mark:" });
 					break;
 			}
 		}

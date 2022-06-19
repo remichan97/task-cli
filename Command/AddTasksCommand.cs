@@ -9,16 +9,11 @@ public class AddTasksCommand : Command<AddTasksCommand.Settings>
 	{
 		[CommandArgument(0, "<task_name>")]
 		public string? TaskName { get; set; }
-
-		public override ValidationResult Validate()
-		{
-			return TaskName is null ? ValidationResult.Error("No task name specified. Aborted.") : ValidationResult.Success();
-		}
 	}
 
 	public override int Execute([NotNull] CommandContext context, [NotNull] Settings settings)
 	{
-		TaskController.add(settings.TaskName);
+		TaskController.add(settings.TaskName!);
 
 		AnsiConsole.MarkupLine($"[green]Success![/] The task [turquoise2]{settings.TaskName}[/] has been created");
 

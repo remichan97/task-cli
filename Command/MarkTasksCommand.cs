@@ -17,7 +17,7 @@ public class MarkTasksCommand : Command<MarkTasksCommand.Settings>
 		{
 			try
 			{
-				int ind = Int32.Parse(index);
+				int ind = Int32.Parse(index!);
 
 				if (ind == 0)
 				{
@@ -35,7 +35,7 @@ public class MarkTasksCommand : Command<MarkTasksCommand.Settings>
 
 	public override int Execute([NotNull] CommandContext context, [NotNull] Settings settings)
 	{
-		int index = Int32.Parse(settings.index);
+		int index = Int32.Parse(settings.index!);
 
 		List<task_cli.Model.Tasks> taskList = TaskController.listAll();
 
@@ -65,10 +65,10 @@ public class MarkTasksCommand : Command<MarkTasksCommand.Settings>
 		switch (taskList[pops].Status)
 		{
 			case Tasks.TaskStatus.Completed:
-				table.AddRow(new string[] { settings.index.ToString(), taskList[pops].TaskName, taskList[pops].CreatedOn.ToShortDateString(), $":check_mark_button:" });
+				table.AddRow(new string[] { settings.index!.ToString(), taskList[pops].TaskName!, taskList[pops].CreatedOn.ToShortDateString(), $":check_mark_button:" });
 				break;
 			case Tasks.TaskStatus.Undone:
-				table.AddRow(new string[] { settings.index.ToString(), taskList[pops].TaskName, taskList[pops].CreatedOn.ToShortDateString(), $":cross_mark:" });
+				table.AddRow(new string[] { settings.index!.ToString(), taskList[pops].TaskName!, taskList[pops].CreatedOn.ToShortDateString(), $":cross_mark:" });
 				break;
 		}
 

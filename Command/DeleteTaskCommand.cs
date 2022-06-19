@@ -14,7 +14,7 @@ public class DeleteTaskCommand : Command<DeleteTaskCommand.Settings>
 		{
 			try
 			{
-				int ind = Int32.Parse(index);
+				int ind = Int32.Parse(index!);
 
 				if (ind == 0) return ValidationResult.Error("Task number cannot be zero. Aborted");
 			}
@@ -29,7 +29,7 @@ public class DeleteTaskCommand : Command<DeleteTaskCommand.Settings>
 
 	public override int Execute([NotNull] CommandContext context, [NotNull] Settings settings)
 	{
-		int index = Int32.Parse(settings.index);
+		int index = Int32.Parse(settings.index!);
 		List<task_cli.Model.Tasks> tasks = TaskController.listAll();
 
 		if (index > tasks.Count)
