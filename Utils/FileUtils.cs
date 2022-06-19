@@ -14,7 +14,7 @@ namespace task_cli.Utils
 		};
 
 		/// <summary>
-		/// A function to create a file for persist the list store in the program, also can be used to wipe the file per requested
+		/// A function to create a file for persisting the list stored in the program, also can be used to wipe the file per requested
 		/// </summary>
 		internal static void checkAndCreateDataFile(bool clear)
 		{
@@ -27,7 +27,7 @@ namespace task_cli.Utils
 		}
 
 		/// <summary>
-		/// A function use for saving the list into the created json file for persistency
+		/// A function for saving the list into the created json file for persistency
 		/// </summary>
 		/// <param name="tasksList">The list need to be saved</param>
 		internal static void WriteJsonFile(List<Tasks> tasksList)
