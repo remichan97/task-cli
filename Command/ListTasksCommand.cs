@@ -30,8 +30,6 @@ public class ListTasksCommand : Command<ListTasksCommand.Settings>
 
 		Console.Clear();
 
-
-
 		var table = new Table();
 		table.Centered();
 		table.Border(TableBorder.Rounded);
