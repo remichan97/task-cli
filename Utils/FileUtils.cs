@@ -1,5 +1,4 @@
-﻿using System.Runtime.Serialization.Formatters.Binary;
-using System.Text.Json;
+﻿using System.Text.Json;
 using task_cli.Model;
 
 namespace task_cli.Utils
@@ -40,7 +39,7 @@ namespace task_cli.Utils
 		/// A function to dump the saved json file into the app list
 		/// </summary>
 		/// <returns>The dumped list from the json file</returns>
-		internal static List<Tasks> ReadJsonFile()
+		internal static List<Tasks>? ReadJsonFile()
 		{
 			string json = File.ReadAllText(fileName);
 			return json == "" || json == "[]" ? new List<Tasks>() : JsonSerializer.Deserialize<List<Tasks>>(json);
