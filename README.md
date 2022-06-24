@@ -50,7 +50,9 @@ task search "keyword"
 - [x] On marking task, display the affected task with updated change
 - [x] Clear the terminal each time `list` is called
 - [x] An optional option in the `list` command to show unfinished(undone) tasks
-- [x] Have a friendlier Error Message (currently using the default Exception message on some area).
+- [x] Have a friendlier Error Message in possible places (currently using the default Exception message on some area).
+- [ ] Add a current weather display when `list` is invoked.
+- [ ] Add a current date and time display when `list` is invoked.
 
 # NuGet Package used in the project
 [Spectre Console](https://github.com/spectreconsole/spectre.console)
