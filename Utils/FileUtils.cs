@@ -5,7 +5,7 @@ namespace task_cli.Utils
 {
 	internal class FileUtils
 	{
-		private static readonly string fileName = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\tasklist.json";
+		private static readonly string fileName = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\task-cli\\tasklist.json";
 
 		private static readonly JsonSerializerOptions opt = new JsonSerializerOptions()
 		{
