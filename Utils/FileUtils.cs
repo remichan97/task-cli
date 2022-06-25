@@ -17,6 +17,7 @@ namespace task_cli.Utils
 		/// </summary>
 		internal static void checkAndCreateDataFile(bool clear)
 		{
+			Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\task-cli");
 			// Check whether a file exists, if it does NOT exists, create the file in the current user folder
 			// Or if user requested that the file will be cleared, clear everything in the file
 			if (File.Exists(fileName) == false || clear == true)
