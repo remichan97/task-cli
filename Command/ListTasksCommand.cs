@@ -70,6 +70,19 @@ public class ListTasksCommand : Command<ListTasksCommand.Settings>
 			}
 		}
 
+		string time = $"The time is [bold]{DateTime.Now.ToLocalTime().ToShortTimeString()}[/]";
+		string date = $"Current date is [bold]{DateTime.Now.ToLocalTime().ToLongDateString()}[/]";
+
+		var timeRule = new Rule(time);
+		timeRule.Alignment = Justify.Center;
+		timeRule.NoBorder();
+
+		var dateRule = new Rule(date);
+		dateRule.Alignment = Justify.Center;
+		dateRule.NoBorder();
+
+		AnsiConsole.Write(timeRule);
+		AnsiConsole.Write(dateRule);
 		AnsiConsole.Write(table);
 
 		return 0;

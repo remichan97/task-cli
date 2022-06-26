@@ -1,5 +1,4 @@
-﻿using Spectre.Console;
-using Spectre.Console.Cli;
+﻿using Spectre.Console.Cli;
 using task_cli.Utils;
 
 FileUtils.checkAndCreateDataFile(false);
