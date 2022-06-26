@@ -16,15 +16,11 @@ public class ListTasksCommand : Command<ListTasksCommand.Settings>
 	{
 		List<Tasks> taskList = TaskController.listAll();
 
+		int v = taskList.FindAll(it => it.Status == Tasks.TaskStatus.Undone).Count();
+
 		if (taskList.Count == 0)
 		{
 			AnsiConsole.MarkupLine("[Yellow]No task created![/] Enjoy your day off~");
-			return 0;
-		}
-
-		if (taskList.Count == 0 && settings.undone)
-		{
-			AnsiConsole.MarkupLine("[green]You have no undone tasks![/]");
 			return 0;
 		}
 
@@ -41,6 +37,12 @@ public class ListTasksCommand : Command<ListTasksCommand.Settings>
 
 		if (settings.undone)
 		{
+			if (v == 0)
+			{
+				Console.WriteLine("You have no undone tasks");
+				return 0;
+			}
+
 			Console.WriteLine("Displaying undone tasks only");
 
 			taskList.ForEach(it =>
