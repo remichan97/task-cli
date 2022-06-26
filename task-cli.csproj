@@ -15,7 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="OpenWeatherMapApi" Version="1.1.0" />
     <PackageReference Include="Spectre.Console" Version="0.44.0" />
   </ItemGroup>
 
