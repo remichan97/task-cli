@@ -24,8 +24,6 @@ public class ListTasksCommand : Command<ListTasksCommand.Settings>
 			return 0;
 		}
 
-		Console.Clear();
-
 		var table = new Table();
 		table.Centered();
 		table.Border(TableBorder.Rounded);
@@ -43,6 +41,8 @@ public class ListTasksCommand : Command<ListTasksCommand.Settings>
 				return 0;
 			}
 
+			Console.Clear();
+
 			Console.WriteLine("Displaying undone tasks only");
 
 			taskList.ForEach(it =>
@@ -56,6 +56,8 @@ public class ListTasksCommand : Command<ListTasksCommand.Settings>
 			return 0;
 
 		}
+
+		Console.Clear();
 
 		for (var i = 0; i < taskList.Count; i++)
 		{
