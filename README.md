@@ -54,6 +54,7 @@ task search "keyword"
 - [x] Add a current date and time display when `list` is invoked.
 - [ ] Add a simple configuration command for weather displaying when `list` is invoked
 - [ ] Add a current weather display when `list` is invoked.
+- [ ] Refactoring
 
 # NuGet Package used in the project
 [Spectre Console](https://github.com/spectreconsole/spectre.console)
