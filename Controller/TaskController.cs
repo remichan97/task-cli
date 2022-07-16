@@ -5,7 +5,7 @@ namespace task_cli.Controller
 {
 	internal class TaskController
 	{
-		private static List<Tasks> taskList = FileUtils.ReadJsonFile();
+		private static List<Tasks> taskList = FileUtils.ReadJsonFile()!;
 
 		internal static void add(string taskName)
 		{

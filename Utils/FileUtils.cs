@@ -45,5 +45,10 @@ namespace task_cli.Utils
 			string json = File.ReadAllText(fileName);
 			return json == "" || json == "[]" ? new List<Tasks>() : JsonSerializer.Deserialize<List<Tasks>>(json);
 		}
+
+		internal static void createPersistentWeatherData()
+		{
+
+		}
 	}
 }
