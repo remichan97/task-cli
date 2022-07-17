@@ -7,13 +7,13 @@ namespace task_cli.Model
 {
 	internal class WeatherConfig
 	{
-		internal enum MetricUnit
+		internal enum TemperatureUnit
 		{
 			Imperial = 1,
 			Metric = 2
 		}
 		public string? CityName { get; set; }
-		public MetricUnit metricUnit { get; set; }
+		public TemperatureUnit metricUnit { get; set; }
 
 	}
 }

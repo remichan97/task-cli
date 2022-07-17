@@ -7,6 +7,8 @@ namespace task_cli.Utils
 	{
 		private static readonly string fileName = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\task-cli\\tasklist.json";
 
+		private static readonly string weatherConfig = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\task-cli\\tasklist.json";
+
 		private static readonly JsonSerializerOptions opt = new JsonSerializerOptions()
 		{
 			WriteIndented = true
@@ -46,9 +48,16 @@ namespace task_cli.Utils
 			return json == "" || json == "[]" ? new List<Tasks>() : JsonSerializer.Deserialize<List<Tasks>>(json);
 		}
 
-		internal static void createPersistentWeatherData()
+		internal static void createPersistentWeatherData(WeatherConfig config)
 		{
+			var json = JsonSerializer.Serialize(config, opt);
+			File.WriteAllText(weatherConfig, json);
+		}
 
+		internal static WeatherConfig getWeatherConfig()
+		{
+			string json = File.ReadAllText(weatherConfig);
+			return JsonSerializer.Deserialize<WeatherConfig>(json)!;
 		}
 	}
 }
