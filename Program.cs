@@ -35,6 +35,8 @@ app.Configure(it =>
 	it.AddCommand<SearchTasksCommand>("search")
 	.WithDescription("Search for tasks in the saved task list");
 
+	it.AddCommand<WeatherConfigCommand>("weather")
+	.WithDescription("Set data for weather displaying when listing tasks");
 });
 
 app.Run(args);
