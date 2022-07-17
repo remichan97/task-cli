@@ -25,8 +25,8 @@ namespace task_cli.Controller
 					config.metricUnit = WeatherConfig.TemperatureUnit.Imperial;
 					break;
 			}
-			
-			
+
+			FileUtils.writeWeatherConfig(config);
 		}
 	}
 }

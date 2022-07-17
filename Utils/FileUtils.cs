@@ -48,7 +48,7 @@ namespace task_cli.Utils
 			return json == "" || json == "[]" ? new List<Tasks>() : JsonSerializer.Deserialize<List<Tasks>>(json);
 		}
 
-		internal static void createPersistentWeatherData(WeatherConfig config)
+		internal static void writeWeatherConfig(WeatherConfig config)
 		{
 			var json = JsonSerializer.Serialize(config, opt);
 			File.WriteAllText(weatherConfig, json);
