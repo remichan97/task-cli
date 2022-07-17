@@ -20,7 +20,13 @@ public class WeatherConfigCommand : Command<WeatherConfigCommand.Settings>
 
 	public override int Execute([NotNull] CommandContext context, [NotNull] Settings settings)
 	{
-		
+		string city = settings.CityName!;
+
+		string tempUnit = settings.TempUnit!;
+
+		WeatherController.writeWeatherConfig(city, tempUnit);
+
+		AnsiConsole.MarkupLine("[green]Success![/] The weather display configuration has been saved!");
 		return 0;
 	}
 }

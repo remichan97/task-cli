@@ -28,5 +28,10 @@ namespace task_cli.Controller
 
 			FileUtils.writeWeatherConfig(config);
 		}
+
+		internal static void getWeatherData()
+		{
+			
+		}
 	}
 }
