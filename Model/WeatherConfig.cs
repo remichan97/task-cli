@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace task_cli.Model
 {
 	internal class WeatherConfig
@@ -13,6 +8,7 @@ namespace task_cli.Model
 			Metric = 2
 		}
 		public string? CityName { get; set; }
+		public string weatherApiKey { get; set; } = "";
 		public TemperatureUnit metricUnit { get; set; }
 
 	}
