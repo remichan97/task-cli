@@ -14,7 +14,7 @@ public class WeatherConfigCommand : Command<WeatherConfigCommand.Settings>
 
 		public override ValidationResult Validate()
 		{
-			return TempUnit!.ToLower().Equals("metric") || TempUnit.ToLower().Equals("imperial") ? ValidationResult.Error("Invalid value! Temperature unit must be either metric or imperial") : ValidationResult.Success();
+			return !(TempUnit!.ToLower().Equals("metric")) || !(TempUnit.ToLower().Equals("imperial")) ? ValidationResult.Error("Invalid value! Temperature unit must be either metric or imperial") : ValidationResult.Success();
 		}
 	}
 
